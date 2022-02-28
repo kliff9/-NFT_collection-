@@ -3,11 +3,14 @@
   background-color: #0d1116;
   overflow: scroll;
   text-align: center;
+  background-image: url("letters.jpg");
+  background-size: cover;
+  background-repeat: no-repeat, repeat;
 }
 
 .container {
+  margin-top: 200px;
   height: 100%;
-  background-color: #0d1116;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,18 +27,22 @@
 }
 
 .sub-text {
+
   font-size: 25px;
+  font-weight: 400px;
   color: white;
 }
 
 .gradient-text {
-  background: -webkit-linear-gradient(left, #60c657 30%, #35aee2 60%);
+  background: #0d56f3;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
 }
 
 .cta-button {
+  border-radius: 5px;
   height: 45px;
   border: 0;
   width: auto;
@@ -49,7 +56,8 @@
 }
 
 .connect-wallet-button {
-  background: -webkit-linear-gradient(left, #60c657, #35aee2);
+  
+  background: -webkit-linear-gradient(left, #0f33ff, #356ce2);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
 }
