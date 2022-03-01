@@ -4,7 +4,7 @@
 
 ## Purpose:
 
-An NFT is a digital asset that represents real-world objects like art, music, in-game items and videos. They are bought and sold online, frequently with cryptocurrency. An NFT is generated (or ‘minted’) using a ‘smart contract’, which is computer code stored on a blockchain. Users Will be able to mint their Own NFT with this application
+An NFT is a digital asset that represents real-world objects like art, music, in-game items and videos. An NFT is generated (or ‘minted’) using a ‘smart contract’, which is computer code stored on a blockchain. Users Will be able to mint their Own NFT with this application
 
 
 ## Technologies Used:
