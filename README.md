@@ -1,5 +1,5 @@
 .
-# RandomWord NFT Collection �
+# RandomWord NFT Collection 
 
 
 ## Purpose:
