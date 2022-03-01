@@ -22,3 +22,8 @@ An NFT is generated (or ‘minted’) using a ‘smart contract’, which is com
 ## Guide:
 
 https://buildspace.so
+
+## Preview
+
+https://user-images.githubusercontent.com/32655437/156211790-b4cde123-2a79-45ac-a79e-d3d6d831197a.mp4
+
