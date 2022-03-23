@@ -11,16 +11,7 @@ const TOTAL_MINT_COUNT = 50;
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
 
-  // https://www.svgviewer.dev
-  // https://www.utilities-online.info/base64
-  //   let chainId = await ethereum.request({ method: 'eth_chainId' });
-  // console.log("Connected to chain " + chainId);
 
-  // // String, hex code of the chainId of the Rinkebey test network
-  // const rinkebyChainId = "0x4";
-  // if (chainId !== rinkebyChainId) {
-  // 	alert("You are not connected to the Rinkeby Test Network!");
-  // }
   const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
 
@@ -37,17 +28,14 @@ const App = () => {
       const account = accounts[0];
       console.log("Found an authorized account:", account);
       setCurrentAccount(account);
-      // Setup listener! This is for the case where a user comes to our site
-      // and ALREADY had their wallet connected + authorized.
+
       setupEventListener();
     } else {
       console.log("No authorized account found");
     }
   };
 
-  /*
-   * Implement your connectWallet method here
-   */
+
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -57,20 +45,14 @@ const App = () => {
         return;
       }
 
-      /*
-       * Fancy method to request access to account.
-       */
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
 
-      /*
-       * Boom! This should print out public address once we authorize Metamask.
-       */
+
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
-      // Setup listener! This is for the case where a user comes to our site
-      // and ALREADY had their wallet connected + authorized.
+
       setupEventListener();
     } catch (error) {
       console.log(error);
@@ -129,12 +111,10 @@ const App = () => {
   );
   //---------------------------- Setup our listener. ---------------------------------------------
   const setupEventListener = async () => {
-    // Most of this looks the same as our function askContractToMintNft
     try {
       const { ethereum } = window;
 
       if (ethereum) {
-        // Same stuff again
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(
@@ -143,9 +123,6 @@ const App = () => {
           signer
         );
 
-        // THIS IS THE MAGIC SAUCE.
-        // This will essentially "capture" our event when our contract throws it.
-        // If you're familiar with webhooks, it's very similar to that!
         connectedContract.on("NewEpicNFTMinted", (from, tokenId) => {
           console.log(from, tokenId.toNumber());
           alert(
@@ -166,9 +143,7 @@ const App = () => {
     checkIfWalletIsConnected();
   }, []);
 
-  /*
-   * Added a conditional render! We don't want to show Connect to Wallet if we're already conencted :).
-   */
+
   return (
     <div className="App">
       <div className="container">
@@ -179,7 +154,7 @@ const App = () => {
           </p>
           {currentAccount === ""
             ? renderNotConnectedContainer()
-            : /** Add askContractToMintNft Action for the onClick event **/
+            : 
               renderMintUI()}
         </div>
       </div>
